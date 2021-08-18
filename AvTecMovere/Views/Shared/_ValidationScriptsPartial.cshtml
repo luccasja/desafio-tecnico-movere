@@ -1,0 +1,35 @@
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+    $("#valor").mask("#.##0,00", { reverse: true });
+
+    $("#FormNewSale").validate({
+        rules: {
+            NomeCliente: { required: true },
+            Valor: { required: true },
+            DataVenda: { required: true }
+        },
+        messages: {
+            NomeCliente: { required: "O campo Nome do Cliente é obrigatório" },
+            Valor: { required: "O campo Valor é obrigatório" },
+            DataVenda: { required: "O campo Data da Venda é obrigatório" }
+        }
+    })
+
+    $("#FormEditSale").validate({
+        rules: {
+            NomeCliente: { required: true },
+            Valor: { required: true },
+            DataVenda: { required: true }
+        },
+        messages: {
+            NomeCliente: { required: "O campo Nome do Cliente é obrigatório" },
+            Valor: { required: "O campo Valor é obrigatório" },
+            DataVenda: { required: "O campo Data da Venda é obrigatório" }
+        }
+    })
+
+</script>

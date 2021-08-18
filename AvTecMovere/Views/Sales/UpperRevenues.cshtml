@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AvTecMovere.Models.Sale>
+
+@{
+    ViewData["Title"] = "Maior Receita";
+    var sale = Model.First();
+}
+
+<br/>
+<h3>@ViewData["Title"]</h3>
+<div>
+    <a class="btn btn-primary" asp-action="Index">Voltar para Vendas</a>
+</div>
+
+<br />
+<div class="alert alert-primary" role="alert">
+    <p>
+        <b>@sale.NomeCliente</b>
+        é seu cliente de maior receita, com total de
+        <b>@sale.Valor.ToString("C2")</b>
+    </p>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>Data da Última Venda</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeCliente)
+                </td>
+                <td>
+                    @item.Valor.ToString("C2")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataVenda)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

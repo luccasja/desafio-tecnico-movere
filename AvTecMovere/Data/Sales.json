@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "c3337d56-a946-4de2-929a-6439b67f2012",
+    "NomeCliente": "Jos\u00E9",
+    "Valor": 1.90,
+    "DataVenda": "2021-08-18T01:03:00"
+  },
+  {
+    "Id": "fd630ea8-85e0-408e-ab2e-8b7e90b5c310",
+    "NomeCliente": "Maria Joaquina",
+    "Valor": 1.90,
+    "DataVenda": "2021-08-18T11:12:00"
+  },
+  {
+    "Id": "d348d573-8152-4f66-ae74-2a3782b9926d",
+    "NomeCliente": "Jo\u00E3o Gomes",
+    "Valor": 15.47,
+    "DataVenda": "2021-08-18T11:12:00"
+  },
+  {
+    "Id": "2467eddf-054b-4409-9519-658f3a5fe8cf",
+    "NomeCliente": "Jos\u00E9",
+    "Valor": 20.00,
+    "DataVenda": "2021-08-18T11:38:00"
+  },
+  {
+    "Id": "33dde959-561b-43be-bf1f-67878e2ceabe",
+    "NomeCliente": "Maria Joaquina",
+    "Valor": 30.00,
+    "DataVenda": "2021-08-18T11:41:00"
+  },
+  {
+    "Id": "fb1f18b0-f4d8-4e3e-b397-2cf22f931afa",
+    "NomeCliente": "Jo\u00E3o Gomes",
+    "Valor": 25.12,
+    "DataVenda": "2021-08-18T13:16:00"
+  }
+]

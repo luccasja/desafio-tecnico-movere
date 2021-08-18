@@ -1,0 +1,82 @@
+﻿@model IEnumerable<AvTecMovere.Models.Sale>
+
+@{
+    ViewData["Title"] = "Vendas";
+
+    if (TempData["msg"] != null)
+    {
+        @Html.Raw($"<script>alert('{TempData["msg"]}');</script>");
+        TempData["msg"] = null;
+    }
+
+    bool ListSalesEmpty = (Model.Count() == 0);
+}
+<br />
+<h3>@ViewData["Title"]</h3>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">
+        Inserir Venda
+    </a>
+    <a class="btn btn-info"
+       asp-action="UpperSale"
+       hidden=@ListSalesEmpty>
+        Exibir Maior Venda
+    </a>
+    <a class="btn btn-info"
+       asp-action="UpperRevenues"
+       hidden=@ListSalesEmpty>
+        Exibir Maior Receita
+    </a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataVenda)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+       @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.NomeCliente)</td>
+                <td>@item.Valor.ToString("C2")</td>
+                <td>@Html.DisplayFor(modelItem => item.DataVenda)</td>
+                <td>
+                    <form asp-action="Edit" method="post">
+                        <div class="form-group">
+                            <input name="id" value=@item.Id hidden />
+                            <input type="submit"
+                                   value="Alterar"
+                                   class="btn btn-outline-primary" />
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <form asp-action="Delete" method="post">
+                        <div class="form-group">
+                            <input name="id" value=@item.Id hidden />
+                            <input type="submit"
+                                   value="Apagar"
+                                   class="btn btn-outline-danger"
+                                   onclick="return confirm('Deseja realmente apagar esta venda?');" />
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
